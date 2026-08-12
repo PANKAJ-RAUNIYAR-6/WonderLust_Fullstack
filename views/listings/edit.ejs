@@ -1,0 +1,86 @@
+<% layout("/layouts/boilerplate") -%>
+
+        <div class="row mt-4">
+            <div class="col-8 offset-2">
+                <h3>EDIT YOUR LISTING</h3>
+                <form method="post" action="/listings/<%=listing._id%>?_method=PUT" 
+                    novalidate class="needs-validation" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input class="form-control" name="listing[title]" value="<%=listing.title%>" type="text" required>
+
+                         <!-- msg show on title is empty teh submit -->
+                         <div class="invalid-feedback">
+                            Please Enter Title..
+                         </div>
+                          <!-- msg show on title if filled -->
+                         <div class="valid-feedback">
+                            Titles looks good.
+                         </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description:</label>
+                        <textarea class="form-control" name="listing[description]"
+                            type="text" required><%=listing.description%></textarea>
+
+                        <!-- msg show on descrip. -->
+                         <div class="invalid-feedback">
+                            Description Should Be Valid..
+                         </div>
+                    </div>
+                   <!-- Image Preview for edit page -->
+                    <div class="mb-3">
+                        Original Listing Image: <br>
+                        <img src="<%= originalImageUrl %>" />
+                    </div>
+
+                    <!-- Upload new Image in edit page -->
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload New Image:</label>
+                        <input class="form-control" name="listing[image]" type="file">
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price:</label>
+                            <input class="form-control" name="listing[price]" type="number" value="<%=listing.price%>" required>
+
+                            <!-- msg show on price -->
+                            <div class="invalid-feedback">
+                               Price Should Be Valid..
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country:</label>
+                            <input class="form-control" name="listing[location]" type="text"
+                                value="<%=listing.location%>" required>
+                                    
+                            <!-- msg show on country -->
+                           <div class="invalid-feedback">
+                                Country Name Should Be Valid..
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location:</label>
+                        <input class="form-control" name="listing[country]" type="text" value="<%=listing.country%>" required>
+
+                            <!-- msg show on location -->
+                         <div class="invalid-feedback">
+                            Location Should Be Valid..
+                         </div>
+                    </div>
+                    
+                    <button class="btn btn-dark edit-btn mt-2 mb-5">EDIT  CARD</button>
+
+                </form>
+            </div>
+        </div>
+
+
+    

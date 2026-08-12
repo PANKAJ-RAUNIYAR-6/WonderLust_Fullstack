@@ -1,0 +1,85 @@
+<% layout("/layouts/boilerplate") -%>
+
+
+
+
+    <div class="row mt-4">
+        <div class="col-8 offset-2"> <!--offset-2 mean left side space,,ocuplt 8 part of cols-->
+
+            <h3>CREATE A NEW LISTING</h3><br>
+            <form method="post" action="/listings" enctype="multipart/form-data" novalidate class="needs-validation">
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input class="form-control" name="listing[title]" placeholder="Add a title" type="text" required>
+                
+                    <!-- validation if title right then the msg show -->
+                    <div class="valid-feedback">
+                        Title Looks Good!..
+                    </div>
+                     <!-- msg show on title if empty -->
+                         <div class="invalid-feedback">
+                            Please Enter Valid Title..
+                         </div>
+                
+                </div>
+
+          
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <textarea class="form-control" name="listing[description]" required></textarea>
+                
+                     <!-- msg show on description -->
+                    <div class="invalid-feedback">
+                        Please Enter A Short Description.
+                         </div>
+                
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Listing Image:</label>
+                    <input class="form-control" name="listing[image]" type="file" required>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4"><!--takes 4 parts of col and for medium screen take full parts col-->
+                        <label for="price" class="form-label">Price:</label>
+                        <input class="form-control" name="listing[price]" placeholder="1200" required>
+
+                        <!-- msg show on price -->
+                         <div class="invalid-feedback">
+                            Price Should Be Valid.
+                         </div>
+                    </div>
+
+                    <div class="mb-3 col-md-8"> <!--takes 9parts of col-->
+                        <label for="country" class="form-label">Country:</label>
+                        <input class="form-control" name="listing[country]" type="text" placeholder="India" required>
+                     
+                        <!-- msg show on country -->
+                         <div class="invalid-feedback">
+                            Country Name Should Be Valid.
+                         </div>
+                    
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input class="form-control" name="listing[location]" type="text" placeholder="Jaipur,Rajashthan" required>
+                
+                     <!-- msg show on location -->
+                    <div class="invalid-feedback">
+                        Location Should Be Valid.
+                    </div>
+                
+                </div>
+                
+
+                <button class="btn btn-dark add-btn mt-2 mb-5">ADD NEW</button>
+    
+            </form>
+        </div>
+    </div>
+
