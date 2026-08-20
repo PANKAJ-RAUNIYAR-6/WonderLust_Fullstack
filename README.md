@@ -4,7 +4,7 @@ A full-stack travel and accommodation listing web application where users can ex
 
 ## 🚀 Live Demo
 
-**Live Website:** `YOUR_RENDER_URL`
+**Live Website:** `https://fullstack-project-wonderlist.onrender.com`
 
 ## 📌 About the Project
 
@@ -18,7 +18,7 @@ The application uses **Mapbox** for interactive maps and geocoding. Listing loca
 
 Authentication and authorization are implemented using **Passport.js**, while **MongoDB Atlas** is used for cloud database storage. The application is deployed on **Render**.
 
----
+
 
 ## ✨ Features
 
@@ -116,7 +116,7 @@ Flash messages are used to provide feedback to users for different actions, such
 * Flash messages
 * Responsive layout
 
----
+
 
 ## 🛠️ Tech Stack
 
@@ -158,46 +158,31 @@ Flash messages are used to provide feedback to users for different actions, such
 
 * Render
 
-> Remove any technology from this section if it is not actually used in your project.
 
----
 
 ## 📂 Project Structure
 
 ```text
 Wanderlust/
-│
-├── controllers/
-│   ├── listings.js
-│   ├── reviews.js
-│   └── users.js
-│
-├── init/
-│   ├── data.js
-│   └── index.js
-│
-├── models/
-│
-├── routes/
-│
-├── views/
-│
-├── public/
-│
-├── utils/
-│
-├── middleware.js
-├── app.js
-│
+├── controllers/     # Application controllers
+├── models/          # MongoDB/Mongoose models
+├── routes/          # Application routes
+├── views/           # EJS templates
+├── public/          # CSS, JavaScript, images
+├── utils/           # Utility/helper functions
+├── init/            # Database initialization
+├── middleware.js    # Custom middleware
+├── app.js           # Main application file
 ├── package.json
-├── package-lock.json
 ├── .gitignore
+├── .cloudConfig.js
+├── .package-lock.json
+├── .schema.js
 └── README.md
+
+
 ```
 
-> Add the remaining files inside `models`, `routes`, `views`, `public`, and `utils` according to your actual project structure.
-
----
 
 ## ⚙️ Installation & Setup
 
@@ -230,12 +215,13 @@ Create a `.env` file in the root directory of the project.
 Example:
 
 ```env
+CLOUD_NAME=your_cloudinary_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloud_api_seceret
 ATLASDB_URL=your_mongodb_atlas_connection_string
 SECRET=your_session_secret
 MAP_TOKEN=your_mapbox_token
 ```
-
-Use the exact environment variable names required by your application.
 
 ### 5. Start the Application
 
@@ -243,21 +229,12 @@ Use the exact environment variable names required by your application.
 node app.js
 ```
 
-If your `package.json` contains a start script, you can also use:
-
-```bash
-npm start
-```
-
 The application will run on your configured local port.
 
-Example:
-
 ```text
-http://localhost:8080
+http://localhost:8080/listings
 ```
 
----
 
 ## 🔑 Environment Variables
 
@@ -270,24 +247,13 @@ Typical environment variables include:
 | `ATLASDB_URL` | MongoDB Atlas connection string |
 | `SECRET`      | Session secret                  |
 | `MAP_TOKEN`   | Mapbox access token             |
+| `CLOUD_NAME`   | Cloudinary cloud name             |
+| `CLOUD_API_KEY`   | Cloudinary API key            |
+| `CLOUD_API_SECRET`   | Cloudinary API secret             |
 
-**Never upload your `.env` file to GitHub.**
 
-Make sure `.gitignore` contains:
-
-```text
-.env
 ```
 
-Also never expose:
-
-* MongoDB connection strings
-* Mapbox tokens
-* Session secrets
-* Passwords
-* Other private credentials
-
----
 
 ## 🗄️ Database
 
@@ -303,7 +269,7 @@ The database stores application data such as:
 
 The application connects to MongoDB Atlas using the MongoDB connection string stored in environment variables.
 
----
+
 
 ## 🗺️ How the Map Works
 
@@ -329,7 +295,7 @@ Click Marker
 
 This allows every listing to have its own location displayed on an interactive map.
 
----
+
 
 ## 🔐 Authorization Flow
 
@@ -361,7 +327,7 @@ User requests Edit/Delete
 
 This ensures that a user cannot edit or delete another user's listing or review.
 
----
+
 
 ## 🧭 Main Pages
 
@@ -377,7 +343,7 @@ Allows existing users to log in.
 
 Allows new users to create an account.
 
-### ➕ New Listing Page
+### ➕ Airbnb Your Home
 
 Allows authenticated users to create a new listing.
 
@@ -400,7 +366,7 @@ Displays complete listing information including:
 
 Allows the owner of a listing to update its information.
 
----
+
 
 ## 📸 Screenshots
 
@@ -432,9 +398,6 @@ Example:
 ![Add Listing](screenshots/add-listing.png)
 ```
 
-You can create a `screenshots` folder in your repository and put your project screenshots inside it.
-
----
 
 ## 🚀 Deployment
 
@@ -447,11 +410,11 @@ Make sure the following are configured in your Render environment:
 * MongoDB Atlas connection string
 * Session secret
 * Mapbox token
-* Other required environment variables
+* Cloud Name
+* Cloud API Key
+* Cloud API Secret
 
-The `.env` file should **not** be uploaded to GitHub.
 
----
 
 ## 📦 Running the Project Locally
 
@@ -469,7 +432,7 @@ node app.js
 
 That's all that is required to install the project's dependencies because `npm install` reads them from `package.json`.
 
----
+
 
 ## 🎯 Project Highlights
 
@@ -486,7 +449,7 @@ That's all that is required to install the project's dependencies because `npm i
 * Display Tax toggle
 * Render deployment
 
----
+
 
 ## 🔮 Future Improvements
 
@@ -503,21 +466,16 @@ Some possible improvements for future versions:
 * Improved map-based search
 * Email notifications
 
----
+
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Pankaj Rauniyar**
 
 * GitHub: `YOUR_GITHUB_PROFILE_URL`
 
----
 
-## ⭐ Show Your Support
 
-If you found this project interesting, consider giving the repository a ⭐ on GitHub.
-
----
 
 ## 📄 License
 
