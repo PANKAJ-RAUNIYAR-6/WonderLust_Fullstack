@@ -62,6 +62,19 @@ Each listing contains:
 * Review ownership is checked before deletion
 * Reviews are displayed on the listing details page
 
+
+### 🔎 Explore & Search
+
+* Explore button available in the navigation bar
+* Displays all available listings
+* Users can browse and explore different listings
+* Search listings using the search bar
+* Search by location name
+* Search by listing title
+* Search by country
+* Users can quickly find relevant listings based on their search query
+
+  
 ### 🗺️ Mapbox Integration
 
 The project uses **Mapbox** for interactive maps.
@@ -74,11 +87,6 @@ Features include:
 * Marker for each listing location
 * Listing title displayed when clicking on a marker
 
-### 🔎 Explore
-
-* Explore button available in the navigation bar
-* Displays all available listings
-* Users can browse and explore different listings
 
 ### ➕ Add New Listing
 
@@ -335,6 +343,12 @@ This ensures that a user cannot edit or delete another user's listing or review.
 
 Displays all available listings so users can browse different places.
 
+The Explore page also includes a search bar that allows users to search listings by:
+
+* Location name
+* Listing title
+* Country
+
 ### 🔐 Login Page
 
 Allows existing users to log in.
@@ -447,6 +461,8 @@ That's all that is required to install the project's dependencies because `npm i
 * Review system
 * Flash messages
 * Explore functionality
+* Listing search by location, title, and country
+* Display Tax toggle
 * Display Tax toggle
 * Render deployment
 
@@ -462,9 +478,7 @@ Some possible improvements for future versions:
 * Booking functionality
 * Payment integration
 * User profile page
-* Image upload and cloud storage
 * Pagination for listings
-* Improved map-based search
 * Email notifications
 
 
