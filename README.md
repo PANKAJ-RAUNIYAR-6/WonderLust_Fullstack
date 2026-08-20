@@ -370,32 +370,38 @@ Allows the owner of a listing to update its information.
 
 ## 📸 Screenshots
 
-Add screenshots of your project here.
 
-Example:
 
 ```markdown
 ## 📸 Screenshots
 
-### Explore Page
+SignUp Page
 
-![Explore Page](screenshots/explore.png)
+![Signup](assets/screenshots/signup.png)
 
-### Listing Details
+Login Page
 
-![Listing Details](screenshots/listing-details.png)
+![Login](assets/screenshots/login.png)
 
-### Map
+Create Listing
 
-![Map](screenshots/map.png)
+![Add Listing](assets/screenshots/create-listing.png)
 
-### Login Page
+Explore Page
 
-![Login](screenshots/login.png)
+![Explore Listing ](assets/screenshots/explore.png)
 
-### Add Listing
+Listing Details
 
-![Add Listing](screenshots/add-listing.png)
+![Listing Details](screenshots/listing-detail.png)
+
+Map
+
+![Map](assets/screenshots/map.png)
+
+Update Listing Page
+
+![Update Listing](screenshots/edit-listing.png)
 ```
 
 
