@@ -189,13 +189,13 @@ Wanderlust/
 ### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPO_URL
+git clone https://github.com/PANKAJ-RAUNIYAR-6/WonderLust_Fullstack.git
 ```
 
 ### 2. Navigate to the Project
 
 ```bash
-cd Wanderlust
+cd WonderLust_Fullstack
 ```
 
 ### 3. Install Dependencies
@@ -472,7 +472,7 @@ Some possible improvements for future versions:
 
 **Pankaj Rauniyar**
 
-* GitHub: `YOUR_GITHUB_PROFILE_URL`
+* GitHub: `https://github.com/PANKAJ-RAUNIYAR-6/WonderLust_Fullstack.git`
 
 
 
