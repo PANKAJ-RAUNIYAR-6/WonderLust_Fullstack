@@ -388,7 +388,7 @@ Allows the owner of a listing to update its information.
 
 ### Listing Details
 
-![Listing Details](screenshots/listing-detail.png)
+![Listing Details](assets/screenshots/listing-detail.png)
 
 ### Map
 
