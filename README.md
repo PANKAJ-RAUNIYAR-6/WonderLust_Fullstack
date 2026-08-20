@@ -375,33 +375,33 @@ Allows the owner of a listing to update its information.
 ```markdown
 ## 📸 Screenshots
 
-SignUp Page
+### SignUp Page
 
 ![Signup](assets/screenshots/signup.png)
 
-Login Page
+### Login Page
 
 ![Login](assets/screenshots/login.png)
 
-Create Listing
+### Create Listing
 
 ![Add Listing](assets/screenshots/create-listing.png)
 
-Explore Page
+### Explore Page
 
 ![Explore Listing ](assets/screenshots/explore.png)
 
-Listing Details
+### Listing Details
 
 ![Listing Details](screenshots/listing-detail.png)
 
-Map
+### Map
 
 ![Map](assets/screenshots/map.png)
 
-Update Listing Page
+### Update Listing Page
 
-![Update Listing](screenshots/edit-listing.png)
+![Update Listing](assets/screenshots/edit-listing.png)
 ```
 
 
