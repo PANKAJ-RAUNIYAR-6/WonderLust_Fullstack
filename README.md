@@ -4,7 +4,7 @@ A full-stack travel and accommodation listing web application where users can ex
 
 ## 🚀 Live Demo
 
-**Live Website:** `https://fullstack-project-wonderlist.onrender.com`
+🌐 **[View Live Demo](https://fullstack-project-wonderlist.onrender.com)**
 
 ## 📌 About the Project
 
@@ -472,7 +472,7 @@ Some possible improvements for future versions:
 
 **Pankaj Rauniyar**
 
-* GitHub: `https://github.com/PANKAJ-RAUNIYAR-6/WonderLust_Fullstack.git`
+* GitHub: [Pankaj Rauniyar](https://github.com/PANKAJ-RAUNIYAR-6)
 
 
 
