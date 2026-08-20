@@ -370,11 +370,6 @@ Allows the owner of a listing to update its information.
 
 ## 📸 Screenshots
 
-
-
-```markdown
-## 📸 Screenshots
-
 ### SignUp Page
 
 ![Signup](assets/screenshots/signup.png)
@@ -402,7 +397,7 @@ Allows the owner of a listing to update its information.
 ### Update Listing Page
 
 ![Update Listing](assets/screenshots/edit-listing.png)
-```
+
 
 
 ## 🚀 Deployment
