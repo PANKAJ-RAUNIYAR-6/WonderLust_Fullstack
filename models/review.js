@@ -10,7 +10,7 @@ const reviewSchema=new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now(),  //it give auto now date
+        default: Date.now(),  
     },
     author: {
         type: Schema.Types.ObjectId,

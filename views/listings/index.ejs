@@ -1,106 +1,388 @@
 <% layout("/layouts/boilerplate") %>
-    <!-- ----we can used the vews>layouts>boilerplate ejs code in this page -->
 
 
     <style>
-        #filters {
+        .filter-wrapper {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
+            width: 100%;
         }
 
+        #filters {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow: hidden;
+            flex: 1;
+            scrollbar-width: none;
+        }
+
+        .filter-arrow {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+
+        .filter-arrow:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
         .filter {
+            min-width: 70px;
+            flex-shrink: 0;
             text-align: center;
-            margin-right: 2rem;
+            margin-right: 1rem;
             margin-top: 2rem;
             opacity: 0.7;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.774);
+        }
+
+        #filters {
+            scrollbar-width: none;
+        }
+
+        #filters::-webkit-scrollbar {
+            display: none;
         }
 
         .filter:hover {
             opacity: 1;
             cursor: pointer;
+            color: black;
         }
 
         .filter p {
             font-size: 0.8rem;
+            white-space: nowrap;
         }
-        .tax-info{
+
+        .left-arrow {
+            display: none;
+            margin-right: 10px;
+        }
+
+        .right-arrow {
+            margin-left: 10px;
+        }
+
+
+        @media (max-width: 576px) {
+            .filter-arrow {
+                width: 34px;
+                height: 34px;
+            }
+
+            .filter-arrow i {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .filter-arrow {
+                width: 29px;
+                height: 29px;
+            }
+
+            .filter-arrow i {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .filter-arrow {
+                width: 24px;
+                height: 24px;
+            }
+
+            .filter-arrow i {
+                font-size: 8px;
+            }
+        }
+
+        @media (max-width: 220px) {
+            .filter-arrow {
+                width: 20px;
+                height: 20px;
+            }
+
+            .filter-arrow i {
+                font-size: 6px;
+            }
+        }
+
+
+        @media (max-width: 576px) {
+            .filter {
+                margin-right: 0.7rem;
+            }
+
+            .filter div {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .filter {
+                margin-right: 0.5rem;
+            }
+
+            .filter div {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .filter {
+                margin-right: 0.35rem;
+            }
+
+            .filter div {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (max-width: 220px) {
+            .filter {
+                margin-right: 0.25rem;
+            }
+
+            .filter div {
+                font-size: 0.5rem;
+            }
+        }
+
+        .tax-info {
             display: none;
         }
-        .tax-toggle{
+
+        .tax-toggle {
             border: 1px solid black;
             border-radius: 1rem;
+
             height: 3.25rem;
-            padding: 1rem;
-            margin-left: 2rem;
+            padding: 0.7rem 1rem;
+            margin-left: 1rem;
+
             display: flex;
             align-items: center;
+
+            flex: 0 1 auto;
+            min-width: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .tax-toggle .form-check-reverse.form-switch {
+            display: flex !important;
+            flex-direction: row-reverse !important;
+
+            align-items: center;
+            justify-content: space-between;
+
+            width: 100%;
+            min-width: 0;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            gap: 5px;
+        }
+
+        .tax-toggle .form-check-input {
+            flex: 0 0 auto;
+
+            width: 2rem;
+            height: 1rem;
+
+            margin: 0 !important;
+        }
+
+        .tax-toggle .form-check-label {
+            min-width: 0;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            font-size: 0.75rem;
+        }
+
+
+        @media (max-width: 576px) {
+
+            .tax-toggle {
+                height: 2.4rem;
+                padding: 0.3rem 0.5rem;
+                margin-left: 0.3rem;
+                max-width: 145px;
+            }
+
+            .tax-toggle .form-check-input {
+                width: 1.7rem;
+                height: 0.85rem;
+            }
+
+            .tax-toggle .form-check-label {
+                font-size: 0.6rem;
+            }
+        }
+
+
+        @media (max-width: 400px) {
+
+            .tax-toggle {
+                height: 2.2rem;
+                padding: 0.25rem 0.35rem;
+                margin-left: 0.2rem;
+                max-width: 120px;
+            }
+
+            .tax-toggle .form-check-input {
+                width: 1.35rem;
+                height: 0.7rem;
+            }
+
+            .tax-toggle .form-check-label {
+                font-size: 0.5rem;
+            }
+        }
+
+
+        @media (max-width: 300px) {
+
+            .tax-toggle {
+                height: 2rem;
+                padding: 0.2rem 0.25rem;
+                max-width: 95px;
+            }
+
+            .tax-toggle .form-check-input {
+                width: 1.05rem;
+                height: 0.55rem;
+            }
+
+            .tax-toggle .form-check-label {
+                font-size: 0.4rem;
+            }
+        }
+
+
+        @media (max-width: 220px) {
+
+            .tax-toggle {
+                height: 1.8rem;
+                padding: 0.15rem 0.2rem;
+                max-width: 75px;
+            }
+
+            .tax-toggle .form-check-input {
+                width: 0.85rem;
+                height: 0.45rem;
+            }
+
+            .tax-toggle .form-check-label {
+                font-size: 0.32rem;
+            }
         }
     </style>
 
 
-    <!-- //-----for FILTER ADD--------- -->
-    <div id="filters">
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-hotel"></i></div>
-            <p>Rooms</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic Cities</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-mountain"></i></div>
-            <p>Mountains</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-brands fa-fort-awesome"></i></div>
-            <p>Castles</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-person-swimming"></i></div>
-            <p>Amazing Pools</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-campground"></i></div>
-            <p>Camping</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-cow"></i></div>
-            <p>Farms</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-regular fa-snowflake"></i></div>
-            <p>Arctic</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-igloo"></i></div>
-            <p>Domes</p>
-        </div>
-        <div class="filter">
-            <!-- //fonts awasome icons -->
-            <div><i class="fa-solid fa-ship"></i></div>
-            <p>Boats</p>
+    <div class="filter-wrapper">
+
+        <!-- LEFT ARROW -->
+        <button type="button" class="filter-arrow left-arrow" id="filterPrev">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div id="filters">
+
+            <a href="/listings?category=Trending" class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </a>
+
+            <a href="/listings?category=Rooms" class="filter">
+                <div><i class="fa-solid fa-hotel"></i></div>
+                <p>Rooms</p>
+            </a>
+
+            <a href="/listings?category=Iconic Cities" class="filter">
+                <div><i class="fa-solid fa-mountain-city"></i></div>
+                <p>Iconic Cities</p>
+            </a>
+
+            <a href="/listings?category=Mountains" class="filter">
+                <div><i class="fa-solid fa-mountain"></i></div>
+                <p>Mountains</p>
+            </a>
+
+            <a href="/listings?category=Castles" class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </a>
+
+            <a href="/listings?category=Amazing Pools" class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pools</p>
+            </a>
+
+            <a href="/listings?category=Camping" class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </a>
+
+            <a href="/listings?category=Farms" class="filter">
+                <div><i class="fa-solid fa-cow"></i></div>
+                <p>Farms</p>
+            </a>
+
+            <a href="/listings?category=Arctic" class="filter">
+                <div><i class="fa-regular fa-snowflake"></i></div>
+                <p>Arctic</p>
+            </a>
+
+            <a href="/listings?category=Domes" class="filter">
+                <div><i class="fa-solid fa-igloo"></i></div>
+                <p>Domes</p>
+            </a>
+
+            <a href="/listings?category=Boats" class="filter">
+                <div><i class="fa-solid fa-ship"></i></div>
+                <p>Boats</p>
+            </a>
+
+            <a href="/listings?category=National Parks" class="filter">
+                <div><i class="fa-solid fa-tree"></i></div>
+                <p>National Parks</p>
+            </a>
+
+            <a href="/listings?category=Historical" class="filter">
+                <div><i class="fa-solid fa-landmark"></i></div>
+                <p>Historical</p>
+            </a>
+
         </div>
 
-        <!-- //for switch or toggles -->
+        <!-- RIGHT ARROW -->
+        <button type="button" class="filter-arrow right-arrow" id="filterNext">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- TAX TOGGLE -->
         <div class="tax-toggle">
             <div class="form-check-reverse form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+
                 <label class="form-check-label" for="switchCheckDefault">
                     Display total after taxes
                 </label>
@@ -110,14 +392,12 @@
     </div>
 
 
-
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for(let listing of allListings){ %>
 
             <a href="/listings/<%=listing._id%>" class="listing-link">
                 <div class="card listing-card">
                     <img src="<%=listing.image.url%>" class="card-img-top" alt="listings_images" style="height: 20rem;">
-                    <!--card overlay bootstrap used to give saome effect on card after hover-->
                     <div class="card-img-overlay"></div>
 
                     <div class="card-body">
@@ -126,9 +406,8 @@
                                 <%=listing.title %>
                             </b><br>
                             &#8377; <%=listing.price.toLocaleString("en-IN") %> / night
-                            <!-- //for toggle popup -->
-                            <i class="tax-info"> &nbsp;&nbsp;+18% GST</i>
-                        
+                                <i class="tax-info"> &nbsp;&nbsp;+18% GST</i>
+
                         </p>
                     </div>
                 </div>
@@ -137,20 +416,128 @@
             <% } %>
     </div>
 
+    <% if (allListings.length===0) { %>
+        <div class="text-center mt-5">
+            <h4>No listings found</h4>
+            <p>Try searching for another location or country.</p>
+        </div>
+        <% } %>
 
-    <!-- //toggles -->
-     <script>
-        let taxSwitch=document.getElementById("switchCheckDefault");
-        taxSwitch.addEventListener("click",()=>{
-          let taxInfo=document.getElementsByClassName("tax-info");
-        //   there are more card then we can use loop on cars
-          for(info of taxInfo){
-            //it use to again again toggle the tax info
-            if(info.style.display != "inline"){
-                info.style.display="inline";
-            }else{
-               info.style.display="none";
-            }
-          }
-        });
-     </script>
+
+            <script>
+                const filters = document.getElementById("filters");
+                const filterPrev = document.getElementById("filterPrev");
+                const filterNext = document.getElementById("filterNext");
+
+                // ================= ARROWS =================
+
+                filterNext.addEventListener("click", () => {
+                    filters.scrollBy({
+                        left: 300,
+                        behavior: "smooth"
+                    });
+                });
+
+                filterPrev.addEventListener("click", () => {
+                    filters.scrollBy({
+                        left: -300,
+                        behavior: "smooth"
+                    });
+                });
+
+
+                // ================= ARROW VISIBILITY =================
+
+                function updateArrows() {
+
+                    if (filters.scrollLeft > 0) {
+                        filterPrev.style.display = "flex";
+                    } else {
+                        filterPrev.style.display = "none";
+                    }
+
+                    if (
+                        filters.scrollLeft + filters.clientWidth >=
+                        filters.scrollWidth - 5
+                    ) {
+                        filterNext.style.display = "none";
+                    } else {
+                        filterNext.style.display = "flex";
+                    }
+                }
+
+                filters.addEventListener("scroll", updateArrows);
+
+
+                // ================= CATEGORY CLICK =================
+
+                document.querySelectorAll(".filter").forEach(filter => {
+
+                    filter.addEventListener("click", () => {
+
+                        sessionStorage.setItem(
+                            "filterScrollPosition",
+                            filters.scrollLeft
+                        );
+
+                    });
+
+                });
+
+
+                // ================= PAGE LOAD =================
+
+                window.addEventListener("load", () => {
+
+                    const urlParams = new URLSearchParams(window.location.search);
+
+                    const category = urlParams.get("category");
+
+                    if (category) {
+
+
+                        const savedPosition =
+                            sessionStorage.getItem("filterScrollPosition");
+
+                        if (savedPosition !== null) {
+
+                            filters.scrollLeft = parseInt(savedPosition);
+
+                        }
+
+                    } else {
+
+
+                        sessionStorage.removeItem("filterScrollPosition");
+
+                        filters.scrollLeft = 0;
+
+                    }
+
+                    updateArrows();
+
+                });
+
+
+                // ================= TAX TOGGLE =================
+
+                let taxSwitch =
+                    document.getElementById("switchCheckDefault");
+
+                taxSwitch.addEventListener("click", () => {
+
+                    let taxInfo =
+                        document.getElementsByClassName("tax-info");
+
+                    for (let info of taxInfo) {
+
+                        if (info.style.display != "inline") {
+                            info.style.display = "inline";
+                        } else {
+                            info.style.display = "none";
+                        }
+
+                    }
+
+                });
+            </script>

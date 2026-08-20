@@ -10,11 +10,9 @@ const userSchema=new Schema({
         required: true
     },
 
-    //we not need to wriye username ,password,,salting because passport local mongoose can automatic generate saling value,,username,,hashing password
 
 
 });
-userSchema.plugin(passportLocalMongoose); //it use it automatic generate salt,,username,,password,,hashing,password
-//setpassword,,authenticare,,resetAttempts,,changepassword ye sab set kr deta hai auto
+userSchema.plugin(passportLocalMongoose);
 
 module.exports=mongoose.model("User",userSchema);
